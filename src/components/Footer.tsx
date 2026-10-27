@@ -72,11 +72,8 @@ export function Footer({ products, onSelectSize }: FooterProps) {
           © {new Date().getFullYear()} {site.brandName}. All rights reserved.
         </p>
         <p>
-          Product images are representative and on-screen pictures are simulated. Photography from{' '}
-          <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">
-            Unsplash
-          </a>
-          .
+          Developed by Arpit Dwivedi · <a href="mailto:arp.d@pm.me">arp.d@pm.me</a> ·{' '}
+          <a href="tel:+917071520965">+91 70715 20965</a>
         </p>
       </div>
     </footer>
