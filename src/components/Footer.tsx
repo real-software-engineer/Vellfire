@@ -18,7 +18,7 @@ export function Footer({ products, onSelectSize }: FooterProps) {
           <p>{site.description}</p>
         </div>
 
-        <nav className="footer__col" aria-label="Footer">
+        <nav className="footer__col footer__col--explore" aria-label="Footer">
           <h2 className="footer__heading">Explore</h2>
           <ul>
             {navItems.map((item) => (
@@ -29,7 +29,7 @@ export function Footer({ products, onSelectSize }: FooterProps) {
           </ul>
         </nav>
 
-        <div className="footer__col">
+        <div className="footer__col footer__col--tvs">
           <h2 className="footer__heading">Televisions</h2>
           <ul>
             <li>
@@ -51,7 +51,7 @@ export function Footer({ products, onSelectSize }: FooterProps) {
           </ul>
         </div>
 
-        <div className="footer__col">
+        <div className="footer__col footer__col--contact">
           <h2 className="footer__heading">Contact</h2>
           <address>
             <a href={getDirectionsUrl()} target="_blank" rel="noopener noreferrer">
@@ -71,8 +71,9 @@ export function Footer({ products, onSelectSize }: FooterProps) {
         <p suppressHydrationWarning>
           © {new Date().getFullYear()} {site.brandName}. All rights reserved.
         </p>
-        <p>
-          Developed by Arpit Dwivedi · <a href="mailto:arp.d@pm.me">arp.d@pm.me</a> ·{' '}
+        <p className="footer__credit">
+          <span>Developed by Arpit Dwivedi</span>
+          <a href="mailto:arp.d@pm.me">arp.d@pm.me</a>
           <a href="tel:+917071520965">+91 70715 20965</a>
         </p>
       </div>

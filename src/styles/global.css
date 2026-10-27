@@ -1745,8 +1745,34 @@ address {
 
 .footer__inner {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    'brand brand'
+    'explore tvs'
+    'contact contact';
+  gap: 2.5rem 1.5rem;
+}
+
+.footer__brand { grid-area: brand; }
+.footer__col--explore { grid-area: explore; }
+.footer__col--tvs { grid-area: tvs; }
+.footer__col--contact { grid-area: contact; }
+
+@media (min-width: 40rem) {
+  .footer__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      'brand brand brand'
+      'explore tvs contact';
+  }
+}
+
+@media (min-width: 64rem) {
+  .footer__inner {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-areas: 'brand explore tvs contact';
+    gap: 2.5rem;
+  }
 }
 
 .footer__brand {
@@ -1792,30 +1818,32 @@ address {
 }
 
 .footer__legal {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   padding-block: 1.5rem 2rem;
   border-top: 1px solid var(--night-line);
   font-size: var(--fs-label);
 }
 
-.footer__legal a {
+.footer__credit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.footer__credit a {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (min-width: 64rem) {
-  .footer__inner {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  }
-
   .footer__legal {
-    grid-template-columns: auto 1fr;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 2rem;
-  }
-
-  .footer__legal p:last-child {
-    text-align: right;
   }
 }
 
