@@ -1833,6 +1833,11 @@ address {
   gap: 0.25rem 1rem;
 }
 
+/* Name, email and number each stay on one line; only the gaps between them may wrap. */
+.footer__credit > * {
+  white-space: nowrap;
+}
+
 .footer__credit a {
   text-decoration: underline;
   text-underline-offset: 3px;
